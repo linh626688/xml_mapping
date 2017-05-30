@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.ClassRoom" table="classroom">
+        <id name="classRoomId" type="int">
+            <column name="classroom_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="year" type="string">
+            <column name="year"/>
+        </property>
+        <property name="section" type="string" column="section"/>
+        <property name="status" type="boolean" column="status"/>
+        <property name="remarks" type="string" column="remarks"/>
+
+        <many-to-one name="grade" class="xml.entity.Grade"
+                     column="grade_id" unique="true" not-null="true"
+                     cascade="all"/>
+        <many-to-one name="teacher" class="xml.entity.Teacher"
+                     column="teacher_id" unique="true" not-null="true"
+                     cascade="all"/>
+    </class>
+</hibernate-mapping>

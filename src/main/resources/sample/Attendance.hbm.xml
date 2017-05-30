@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.Attendance" table="attendance">
+        <id name="attendanceId" type="int">
+            <column name="attendance_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="date" type="date" column="date"/>
+
+        <property name="status" type="boolean" column="status"/>
+        <property name="remark" type="string" column="remark"/>
+
+        <many-to-one name="student" class="xml.entity.Student"
+                     column="student_id" unique="true" not-null="true"
+                     cascade="all"/>
+    </class>
+</hibernate-mapping>

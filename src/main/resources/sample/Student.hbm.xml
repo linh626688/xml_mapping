@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.Student" table="student">
+        <id name="studentId" type="int">
+            <column name="student_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="email" type="string" column="email"/>
+        <property name="password" type="string" column="password"/>
+        <property name="fname" type="string" column="fname"/>
+        <property name="lname" type="string" column="lname"/>
+        <property name="dob" type="date" column="dob"/>
+        <property name="phone" type="string" column="phone"/>
+        <property name="mobile" type="string" column="mobile"/>
+        <property name="studentcol" type="int" column="studentcol"/>
+        <property name="dateOfJoin" type="date" column="date_of_join"/>
+        <property name="status" type="boolean" column="status"/>
+        <property name="lastLoginDate" type="date" column="last_login_date"/>
+        <property name="lastLoginID" type="string" column="last_login_id"/>
+        <many-to-one name="parent" class="xml.entity.Parent"
+                     column="parent_id" unique="true" not-null="true"
+                     cascade="all"/>
+    </class>
+</hibernate-mapping>

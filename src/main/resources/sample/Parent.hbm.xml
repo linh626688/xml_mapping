@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.Parent" table="parent">
+        <id name="parentId" type="int">
+            <column name="parent_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="email" type="string" column="email"/>
+        <property name="fname" type="string" column="fname"/>
+        <property name="lname" type="string" column="lname"/>
+        <property name="dob" type="date" column="dob"/>
+        <property name="phone" type="string" column="phone"/>
+        <property name="mobile" type="string" column="mobile"/>
+        <property name="status" type="boolean" column="status"/>
+        <property name="lastLoginDate" type="date" column="last_login_date"/>
+        <property name="lastLoginID" type="string" column="last_login_id"/>
+
+    </class>
+</hibernate-mapping>

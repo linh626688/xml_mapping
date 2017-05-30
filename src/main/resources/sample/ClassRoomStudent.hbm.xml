@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.ClassRoomStudent" table="classroom_student">
+        <id name="classRoomStudentId" type="int">
+            <column name="classroom_student_id"/>
+            <generator class="assigned"/>
+        </id>
+
+        <many-to-one name="classRoom" class="xml.entity.ClassRoom"
+                     column="classroom_id" unique="true" not-null="true"
+                     cascade="all"/>
+        <many-to-one name="student" class="xml.entity.Student"
+                     column="student_id" unique="true" not-null="true"
+                     cascade="all"/>
+    </class>
+</hibernate-mapping>

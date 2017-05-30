@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.ExamType" table="exam_type">
+        <id name="examTypeId" type="int">
+            <column name="exam_type_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string" column="name"/>
+        <property name="descrip" type="string" column="descrip"/>
+
+    </class>
+</hibernate-mapping>

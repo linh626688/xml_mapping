@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.Exam" table="exam">
+        <id name="examId" type="int">
+            <column name="exam_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string" column="name"/>
+        <property name="startDate" type="date" column="start_date"/>
+        <many-to-one name="examType" class="xml.entity.ExamType"
+                     column="exam_type_id" unique="true" not-null="true"
+                     cascade="all"/>
+    </class>
+</hibernate-mapping>

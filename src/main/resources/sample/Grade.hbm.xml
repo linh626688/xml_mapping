@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="xml.entity.Grade" table="grade">
+        <id name="gradeId" type="int">
+            <column name="grade_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string" column="name"/>
+        <property name="descrip" type="string" column="descrip"/>
+    </class>
+</hibernate-mapping>
